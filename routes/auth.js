@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../modules/user/user');
+const User = require('../modules/user/User');
 const bcrypt = require('bcryptjs');
 const jWT = require('jsonwebtoken');
 
@@ -27,15 +27,16 @@ router.get('/login', async (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    const { email, password: noHashPass } = req.body
-    const password = await bcrypt.hash(noHashPass, 10)
+    
+    const salt = await bcrypt.genSaltSync(10)
+    const password = await req.body.password
+    const user = new User({
+        email: req.body.email,
+        password: bcrypt.hashSync(password, salt)
+    })
 
     try {
-        const response = await User.create({
-            email,
-            password
-        })
-        console.log(response)
+        await user.save()
     } catch (error) {
         if (error.code === 11000) {
             res.status(201)

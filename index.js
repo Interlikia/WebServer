@@ -11,7 +11,7 @@ const authRoute = require('./routes/auth');
 dotenv.config();
 
 // Configuração do Banco de Dados
-mongoose.connect(process.env.DB_CONNECT, { userNewUrlParser: true, userUnifiedTopology: true }, () => console.log('Conectado ao banco de dados.'));
+mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('Conectado ao banco de dados.'));
 
 // Middleware
 app.use(cors());
