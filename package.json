@@ -1,0 +1,23 @@
+{
+  "name": "webserver",
+  "version": "1.0.0",
+  "description": "Projeto de Programação Web | Server-side",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Interlikia/WebServer.git"
+  },
+  "author": "Artur e Icaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Interlikia/WebServer/issues"
+  },
+  "homepage": "https://github.com/Interlikia/WebServer#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
