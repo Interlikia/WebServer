@@ -1,5 +1,9 @@
+// Modelo Anime
+
+// Import do mongoose
 const mongoose = require('mongoose');
 
+// Inicializa o Schema "Anime" do BD
 const animeSchema = new mongoose.Schema({
     title:{
         type: String,
@@ -14,7 +18,6 @@ const animeSchema = new mongoose.Schema({
         max: 2048,
         min: 3
     }
-
 });
 
 module.exports = mongoose.model('Anime', animeSchema);

@@ -1,5 +1,9 @@
+// Modelo Usuário
+
+// Import do mongoose
 const mongoose = require('mongoose');
 
+// Inicializa o Schema "Usuário" do BD
 const userSchema = new mongoose.Schema({
     email:{
         type: String,
@@ -14,7 +18,6 @@ const userSchema = new mongoose.Schema({
         max: 20,
         min: 3
     }
-
 });
 
 module.exports = mongoose.model('User', userSchema);
