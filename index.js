@@ -7,6 +7,7 @@ const cors = require('cors');
 
 // Rotas
 const authRoute = require('./routes/auth');
+const apiRoute = require('./routes/anime_api');
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(express.json())
 
 // Rotas 
 app.use('/auth/user', authRoute);
+app.use('/api', apiRoute);
 
 // Configuração Porta do Servidor
 const PORT = process.env.PORT || 3000;
