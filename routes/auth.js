@@ -1,6 +1,6 @@
 // Imports necessários
 const router = require('express').Router();
-const User = require('../modules/user/User');
+const User = require('../modules/user/user');
 const bcrypt = require('bcryptjs');
 const jWT = require('jsonwebtoken');
 
